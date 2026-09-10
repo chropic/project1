@@ -1,0 +1,42 @@
+# Architecture
+
+## Shape
+
+```text
+Internet → Cloudflare Access → Cloudflare Tunnel → 127.0.0.1:19283 → Compose container → server.js
+```
+
+The service is deliberately stateless. Its only success response is `Hello, world!\n` as `text/plain` for `GET /`.
+
+## Landmarks
+
+| Location | Purpose | Change carefully when |
+| --- | --- | --- |
+| [server.js](../server.js) | HTTPS server, validation, headers, timeouts, rate limiting | Changing request behavior or security controls |
+| [compose.yaml](../compose.yaml) | Local-only port publishing, certificate mount, runtime restrictions | Changing deployment or resource limits |
+| [Dockerfile](../Dockerfile) | Minimal unprivileged Node runtime image | Changing the runtime or build inputs |
+| [package.json](../package.json) | Commands and release version | Releasing or adding a development command |
+| [test/configuration.test.js](../test/configuration.test.js) | Endpoint and host-validation checks | Changing server behavior |
+
+## Request contract
+
+```text
+TLS 1.2+ request
+  ├─ known Host?            no → 421
+  ├─ below rate limit?      no → 429
+  ├─ GET?                  no → 405
+  ├─ exact path /?         no → 404
+  ├─ empty body?           no → 413
+  └─ return plaintext      yes → 200
+```
+
+`server.js` does not trust forwarded client-IP headers. Its local rate limit uses the direct socket address, which is intentional: Cloudflare Access and the tunnel/firewall enforce the real network boundary.
+
+## Security invariants
+
+- TLS key and certificate paths are mandatory at startup.
+- `ALLOWED_HOSTS` is mandatory and exact-match only.
+- No cookies, CORS, HTML, JavaScript, request parsing, storage, logging of requests, or dependencies exist.
+- The service rejects bodies and transfer encodings, caps header size/count and keep-alive work, and returns only plaintext errors.
+
+Preserve these invariants unless the change is explicitly approved and documented in this file and `CHANGELOG.md`.
