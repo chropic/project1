@@ -7,6 +7,7 @@ This project uses [Semantic Versioning](https://semver.org/). Keep new work unde
 ### Changed
 
 - Docker Compose and image HTTPS port changed to `19283`.
+- Reformatted the README as the project landing page.
 
 ## 0.0.1 — 2026-09-09
 

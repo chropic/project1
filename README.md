@@ -1,19 +1,22 @@
 # Financial Bias Detector
 
-ESOF423, Fall 2026, Professor Daniel DeFrance | Montana State University 
+> ESOF423, Fall 2026 · Professor Daniel DeFrance · Montana State University
 
-esof423.csit.help
+[Course website](https://esof423.csit.help)
 
+## Project Authors
 
-**Project Authors: **
+- Owen Sanford ([oogwaysprophecy732](https://github.com/oogwaysprophecy732))
+- Charles Smith ([chropic](https://github.com/chropic))
 
-Owen Sanford (oogwaysprophecy732)
+## Navigation
 
-Charles Smith (chropic)
+[Architecture](docs/architecture.md) · [Operations](docs/operations.md) · [Change Log](CHANGELOG.md) · [Agent Guide](AGENTS.md)
 
+## Local Deployment & Security
 
-**Navigation:** [architecture](docs/architecture.md) · [operations](docs/operations.md) · [change log](CHANGELOG.md) · [agent guide](AGENTS.md)
+When run locally, HTTPS is published at `127.0.0.1:19283`.
 
+The container is unprivileged, read-only, and capability-free. Its defaults are limited to 0.25 CPU, 64 MiB memory, 32 PIDs, and 10 requests per minute per source address.
 
-When ran locally, HTTPS published at `127.0.0.1:19283`. 
-The container is unprivileged, read-only, capability-free, and limited to 0.25 CPU, 64 MiB memory, 32 PIDs, and 10 requests/minute per source address. TLS 1.2+, host/method/path/body validation, `nosniff`, HSTS, short timeouts, capped headers/connections, and local rate limiting remain enabled. Cloudflare Access does not protect a directly reachable origin.
+TLS 1.2+, host/method/path/body validation, `nosniff`, HSTS, short timeouts, capped headers/connections, and local rate limiting remain enabled. Cloudflare Access does not protect a directly reachable origin.
