@@ -1,9 +1,12 @@
 # Financial Bias Detector
+
 ESOF423, Fall 2026, Professor Daniel DeFrance | Montana State University 
+
 esof423.csit.help
 
 Project Authors:
 Owen Sanford (oogwaysprophecy732)
+
 Charles Smith (chropic)
 
 **Navigation:** [architecture](docs/architecture.md) · [operations](docs/operations.md) · [change log](CHANGELOG.md) · [agent guide](AGENTS.md)
