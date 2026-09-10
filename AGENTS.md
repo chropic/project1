@@ -1,6 +1,8 @@
 # Repository guide
 
-Read [docs/README.md](docs/README.md) before changing this repository. It is the map for architecture, Docker operations, and release history.
+Before planning any changes, read [docs/PONYTAIL.md](docs/PONYTAIL.md) in full, then [docs/README.md](docs/README.md) for the architecture, Docker operations, and release history. Apply the Ponytail philosophy to the work: understand the problem and affected flow, reuse what exists, and make the smallest correct change.
+
+Before every commit, read [docs/PONYTAIL.md](docs/PONYTAIL.md) again and check the proposed diff against it and the requirements below. These reading steps are mandatory for all agents, including documentation-only work. Preserve the philosophy file verbatim; keep repository-specific guidance here and in the other docs.
 
 ## Required for every change
 

@@ -1,5 +1,7 @@
 # Architecture
 
+All agents must read [PONYTAIL.md](PONYTAIL.md) before planning changes and again before every commit. Use its philosophy when making architecture decisions: understand the affected flow, reuse existing capabilities, and choose the smallest correct change. See the [Repository guide](../AGENTS.md) for the required workflow.
+
 ## Shape
 
 ```text
@@ -12,6 +14,7 @@ The service is deliberately stateless. Its only success response is `Hello, worl
 
 | Location | Purpose | Change carefully when |
 | --- | --- | --- |
+| [docs/PONYTAIL.md](PONYTAIL.md) | Verbatim development philosophy; required reading before planning and committing | Preserve unchanged; put repository-specific guidance in [AGENTS.md](../AGENTS.md) |
 | [server.js](../server.js) | HTTPS server, validation, headers, timeouts, rate limiting | Changing request behavior or security controls |
 | [compose.yaml](../compose.yaml) | Local-only port publishing, certificate mount, runtime restrictions | Changing deployment or resource limits |
 | [Dockerfile](../Dockerfile) | Minimal unprivileged Node runtime image | Changing the runtime or build inputs |

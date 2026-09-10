@@ -11,7 +11,9 @@
 
 ## Navigation
 
-[Architecture](docs/architecture.md) · [Operations](docs/operations.md) · [Change Log](CHANGELOG.md) · [Agent Guide](AGENTS.md)
+[Architecture](docs/architecture.md) · [Operations](docs/operations.md) · [Change Log](CHANGELOG.md) · [Agent Guide](AGENTS.md) · [Ponytail Philosophy](docs/PONYTAIL.md)
+
+Agents must read the [Ponytail philosophy](docs/PONYTAIL.md) before planning changes and again before every commit, as required by the [Agent Guide](AGENTS.md).
 
 ## Local Deployment & Security
 
