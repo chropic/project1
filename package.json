@@ -4,6 +4,7 @@
   "private": true,
   "description": "Minimal hardened HTTPS plaintext service",
   "scripts": {
+    "dev": "node --watch dev.js",
     "start": "node server.js",
     "test": "node --test"
   },

@@ -16,6 +16,7 @@ The service is deliberately stateless. Its only success response is `Hello, worl
 | --- | --- | --- |
 | [docs/PONYTAIL.md](PONYTAIL.md) | Verbatim development philosophy; required reading before planning and committing | Preserve unchanged; put repository-specific guidance in [AGENTS.md](../AGENTS.md) |
 | [server.js](../server.js) | HTTPS server, validation, headers, timeouts, rate limiting | Changing request behavior or security controls |
+| [dev.js](../dev.js) | Local development entry point with automatic certificates and loopback binding | Changing developer setup; reuses `createServer` |
 | [compose.yaml](../compose.yaml) | Local-only port publishing, certificate mount, runtime restrictions | Changing deployment or resource limits |
 | [Dockerfile](../Dockerfile) | Minimal unprivileged Node runtime image | Changing the runtime or build inputs |
 | [package.json](../package.json) | Commands and release version | Releasing or adding a development command |

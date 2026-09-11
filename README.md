@@ -17,7 +17,9 @@ Agents must read the [Ponytail philosophy](docs/PONYTAIL.md) before planning cha
 
 ## Local Deployment & Security
 
-When run locally, HTTPS is published at `127.0.0.1:19283`.
+For development without Docker, install Node.js 22+ and OpenSSL, then run `npm run dev`. Open https://localhost:8443 and accept the local certificate warning. Certificates are generated automatically and code changes restart the server. See [Operations](docs/operations.md) for details.
+
+With Docker Compose, HTTPS is published at `127.0.0.1:19283`.
 
 The container is unprivileged, read-only, and capability-free. Its defaults are limited to 0.25 CPU, 64 MiB memory, 32 PIDs, and 10 requests per minute per source address.
 

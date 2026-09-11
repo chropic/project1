@@ -1,5 +1,13 @@
 # Operations
 
+## Local development (without Docker)
+
+Install Node.js 22+ (with npm) and OpenSSL, then run `npm run dev` from the repository directory. No `npm install` or `.env` setup is needed; the project has no dependencies.
+
+Open https://localhost:8443 and accept the self-signed development certificate warning. The server binds only to `127.0.0.1` and restarts when its JavaScript files change. Stop it with Ctrl+C. To check the endpoint from a terminal, run `curl -k https://localhost:8443/`; expect `Hello, world!`.
+
+The command creates and reuses a one-year certificate in ignored `certs/dev/`, separate from deployment certificates. Delete `certs/dev/` and restart to regenerate an expired certificate. The same HTTPS server and request protections apply, including the 10 requests/minute limit.
+
 ## Compose deployment
 
 ```powershell
