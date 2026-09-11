@@ -1,0 +1,14 @@
+{
+  "name": "plaintext-https-service",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Minimal hardened HTTPS plaintext service",
+  "scripts": {
+    "dev": "node --watch dev.js",
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
